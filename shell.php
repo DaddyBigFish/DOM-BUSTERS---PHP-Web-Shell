@@ -13,7 +13,6 @@ if (!empty($_POST["cmd"])) {
       .line0>strong:nth-child(1),.line0>strong:nth-child(3),.line0>strong:nth-child(5),.line1>p:nth-child(1)   {
         color: #8ff0a4
       }
-
       .line0>strong:nth-child(2),.line1>p:nth-child(2) {
         color: #3584e4
       }
@@ -95,7 +94,7 @@ if (!empty($_POST["cmd"])) {
             <div class="line1">
               <p>└─</p>
               <p>$</p>
-              <input type="text" class="form-control" name="cmd" id="cmd" value="" required="" autofocus>
+              <input name="cmd" id="cmd" type="text" class="form-control" value="<?php if(isset($_POST['cmd'])){ echo $_POST['cmd']; } ?>" required="">
             </div>
           </div>
         </form>
@@ -112,5 +111,11 @@ if (!empty($_POST["cmd"])) {
 <?php endif; ?>
       </div>
     </main>
+      <script>
+    var cmdElement = document.getElementById('cmd');
+    cmdElement.focus();
+    cmdElement.setSelectionRange(cmdElement.value.length, cmdElement.value.length);
+</script>
+
   </body>
 </html>
