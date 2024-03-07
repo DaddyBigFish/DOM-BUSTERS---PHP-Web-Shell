@@ -74,7 +74,6 @@ if (!empty($_POST["cmd"])) {
         width: 850px
       }
     </style>
-    <script src="moz-extension://fa8183ec-249f-4984-9c39-c54eff0910b6/content/fido2/page-script.js" id="bw-fido2-page-script"></script>
   </head>
   <body>
     <main>
